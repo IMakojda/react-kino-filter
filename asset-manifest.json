@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/react-kino-filter/static/css/main.7acaea2f.css",
+    "main.js": "/react-kino-filter/static/js/main.51babffd.js",
+    "static/js/787.6b7abe35.chunk.js": "/react-kino-filter/static/js/787.6b7abe35.chunk.js",
+    "index.html": "/react-kino-filter/index.html",
+    "main.7acaea2f.css.map": "/react-kino-filter/static/css/main.7acaea2f.css.map",
+    "main.51babffd.js.map": "/react-kino-filter/static/js/main.51babffd.js.map",
+    "787.6b7abe35.chunk.js.map": "/react-kino-filter/static/js/787.6b7abe35.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.51babffd.js"
+  ]
+}
