@@ -4,6 +4,7 @@ import ApiPopular from './apiSercice/ApiService';
 import Movie from './movieCard/MovieCard';
 import Filter from './filter/Filter';
 import getGenre from './apiSercice/ApiGenre';
+import { motion,AnimatePresence } from "framer-motion";
 
 function App(){
   const [popular,setPopular]=useState([]);
@@ -27,13 +28,14 @@ function App(){
   return (
     <div>
       <Filter popular={popular} setFiltered={setFiltered} activeGenre={activeGenre} genres={genres} setActiveGenre={setActiveGenre}/>
-      <div className="popular-movies">
+      <motion.div layout className="popular-movies" >
+        <AnimatePresence>
         {filtered.map(movie=>{
           return <Movie key={movie.id} movie={movie}/>
-        })
-
+          })
         }
-      </div>
+        </AnimatePresence>
+      </motion.div>
     </div>
   );
 };

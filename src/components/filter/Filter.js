@@ -1,17 +1,5 @@
 import { useEffect } from "react";
-const axios = require('axios').default;
-
-
-const API_KEY = '61d280fbc4e0ab3fee827783c53f7600';
-const BASE_URL = 'https://api.themoviedb.org/3/';
-
-async function getGenre() {
-  const url = `${BASE_URL}genre/movie/list?api_key=${API_KEY}&language=en-US`;
-  const genreList = await axios.get(url);
-  return genreList.data;
-}
-
-
+import ApiSearchByIds from "components/apiSercice/ApiSearchByIds";
 
 function Filter ({genres,popular,setFiltered,activeGenre,setActiveGenre}){
  useEffect(()=>{
@@ -19,8 +7,10 @@ function Filter ({genres,popular,setFiltered,activeGenre,setActiveGenre}){
     setFiltered(popular)
     return
   }
-  const filtered=popular.filter((movies)=>movies.genre_ids.includes(activeGenre))
-  setFiltered(filtered)
+  
+  ApiSearchByIds(activeGenre)
+  .then(r=>setFiltered(r.results))
+  
  },[activeGenre])
   return (
     <div className="filter-container">
