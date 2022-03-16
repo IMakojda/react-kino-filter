@@ -5,12 +5,13 @@ function Filter ({genres,popular,setFiltered,activeGenre,setActiveGenre}){
  useEffect(()=>{
   if(activeGenre===0){
     setFiltered(popular)
+    // eslint-disable-next-line
     return
   }
   
   ApiSearchByIds(activeGenre)
   .then(r=>setFiltered(r.results))
-  
+ // eslint-disable-next-line 
  },[activeGenre])
   return (
     <div className="filter-container">
